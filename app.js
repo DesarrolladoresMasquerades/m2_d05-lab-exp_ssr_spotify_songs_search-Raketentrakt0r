@@ -40,13 +40,13 @@ app.get("/artist-search", (req,res)=>{
 })
 
 
-app.get('/albums/:artistId', (req, res, next) => {
-    spotifyApi.getArtistAlbums(req.query.albums)
+app.get('/albums/:Id', (req, res, next) => {
+    spotifyApi.getArtistAlbums(req.query.id)
     .then(data => {
-      res.render("page-albums", {artist:data.body.artists.albums})
-      console.log("The received data from the API:", data.body.artists.items.albums)
+      res.render("page-albums", {albums:data.body.albums.items})
+      console.log("The received data from the API:", data.body.albums.items)
     })
-     .catch(err => console.log("The error data from the API", data.body.artists.items.albums))
+     .catch(err => console.log("The error data from the API", data.body.albums.items))
   });
 
 
