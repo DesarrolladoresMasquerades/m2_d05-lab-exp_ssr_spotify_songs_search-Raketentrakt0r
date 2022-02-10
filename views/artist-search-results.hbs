@@ -1,13 +1,19 @@
-<a href="/albums">View Albums</a>
+
 
 <h1>The Artist</h1>
 <section>
 
 {{#each artist}}
 <div>
-    <h1>
+    <h2>
         {{name}}
-    </h1>
+    </h2>
+
+    <h2>
+        {{image}}
+    </h2>
+
+    <button><a href="/albums/the beatles"> View Albums</a></button>
 </div>
 {{/each}}
 
